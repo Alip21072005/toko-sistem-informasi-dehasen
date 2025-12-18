@@ -62,7 +62,8 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-primary navbar-dark sticky-top">
             <div class="container">
-                <a class="navbar-brand fw-bold" href="#"><i class="bi bi-grid-fill me-2"></i>Toko Sistem Informasi waduh</a>
+                <a class="navbar-brand fw-bold" href="#"><i class="bi bi-grid-fill me-2"></i>Toko Sistem Informasi
+                    waduh</a>
                 <div class="ms-auto">
                     <a href="/phpmyadmin/" target="_blank" class="btn btn-light btn-sm fw-bold">
                         <i class="bi bi-database-fill me-1"></i> Database Portal
@@ -86,7 +87,7 @@
                 <div class="card card-toko h-100 p-4">
                     <div class="text-center mb-3">
                         <div class="owner-badge">Owner: Alip Maulana</div>
-                        <h4 class="fw-bold mb-2">Kedai Kito Online</h4>
+                        <h4 class="fw-bold mb-2">Alip Store</h4>
                         <p class="text-muted small">Pusat jajanan lezat dengan cita rasa autentik khas Bengkulu.</p>
                     </div>
                     <div class="mt-auto">
@@ -98,39 +99,56 @@
             </div>
 
             <div class="col">
-                <div class="card card-toko h-100 p-4 border-1 border-dashed">
+                <div class="card card-toko h-100 p-4">
                     <div class="text-center mb-3">
-                        <div class="owner-badge text-primary bg-primary-subtle">Tersedia</div>
-                        <h4 class="fw-bold mb-2 text-muted">Toko Teman 1</h4>
-                        <p class="text-muted small">Project toko online mahasiswa berikutnya akan tampil di sini.</p>
-                    </div>
-                    <div class="mt-auto">
-                        <button class="btn btn-outline-secondary btn-visit w-100" disabled>Coming Soon</button>
+                        <div class="owner-badge">Owner: Sopia Marini/div>
+                            <h4 class="fw-bold mb-2">Kedai Kito Online</h4>
+                            <p class="text-muted small">Pusat jajanan lezat dengan cita rasa autentik khas Bengkulu.</p>
+                        </div>
+                        <div class="mt-auto">
+                            <a href="/sopiamarini/" class="btn btn-primary btn-visit w-100">
+                                Kunjungi Toko <i class="bi bi-arrow-right-short ms-1"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col">
-                <div class="card card-toko h-100 p-4 border-1 border-dashed">
-                    <div class="text-center mb-3">
-                        <div class="owner-badge text-primary bg-primary-subtle">Tersedia</div>
-                        <h4 class="fw-bold mb-2 text-muted">Toko Teman 2</h4>
-                        <p class="text-muted small">Project toko online mahasiswa berikutnya akan tampil di sini.</p>
-                    </div>
-                    <div class="mt-auto">
-                        <button class="btn btn-outline-secondary btn-visit w-100" disabled>Coming Soon</button>
+                <div class="col">
+                    <div class="card card-toko h-100 p-4 border-1 border-dashed">
+                        <div class="text-center mb-3">
+                            <div class="owner-badge text-primary bg-primary-subtle">Tersedia</div>
+                            <h4 class="fw-bold mb-2 text-muted">Toko Teman 1</h4>
+                            <p class="text-muted small">Project toko online mahasiswa berikutnya akan tampil di sini.
+                            </p>
+                        </div>
+                        <div class="mt-auto">
+                            <button class="btn btn-outline-secondary btn-visit w-100" disabled>Coming Soon</button>
+                        </div>
                     </div>
                 </div>
+
+                <div class="col">
+                    <div class="card card-toko h-100 p-4 border-1 border-dashed">
+                        <div class="text-center mb-3">
+                            <div class="owner-badge text-primary bg-primary-subtle">Tersedia</div>
+                            <h4 class="fw-bold mb-2 text-muted">Toko Teman 2</h4>
+                            <p class="text-muted small">Project toko online mahasiswa berikutnya akan tampil di sini.
+                            </p>
+                        </div>
+                        <div class="mt-auto">
+                            <button class="btn btn-outline-secondary btn-visit w-100" disabled>Coming Soon</button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-
         </div>
-    </div>
 
-    <footer class="bg-white py-4 mt-5 border-top">
-        <div class="container text-center text-muted">
-            <p class="small mb-0">&copy; 2025 Kolektif Kelas Sistem Informasi - Universitas Dehasen</p>
-        </div>
-    </footer>
+        <footer class="bg-white py-4 mt-5 border-top">
+            <div class="container text-center text-muted">
+                <p class="small mb-0">&copy; 2025 Kolektif Kelas Sistem Informasi - Universitas Dehasen</p>
+            </div>
+        </footer>
 </body>
 
 </html>
