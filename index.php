@@ -140,7 +140,7 @@ while($row = mysqli_fetch_assoc($query)){
                         <?php echo number_format($stats['sopiamarini'] ?? 0); ?></span>
                     <div class="text-center mt-3">
                         <div class="icon-circle"><i class="bi bi-bag-check-fill"></i></div>
-                        <h4 class="fw-bold mb-4">Kedai Kito</h4>
+                        <h4 class="fw-bold mb-4">Sopia Manis</h4>
                         <a href="visit.php?toko=sopiamarini" class="btn btn-modern">Masuk Toko</a>
                     </div>
                 </div>
@@ -152,7 +152,7 @@ while($row = mysqli_fetch_assoc($query)){
                         <?php echo number_format($stats['dementrius'] ?? 0); ?></span>
                     <div class="text-center mt-3">
                         <div class="icon-circle"><i class="bi bi-cup-hot-fill"></i></div>
-                        <h4 class="fw-bold mb-4">Kedai Gue</h4>
+                        <h4 class="fw-bold mb-4">Demen</h4>
                         <a href="visit.php?toko=dementrius" class="btn btn-modern">Masuk Toko</a>
                     </div>
                 </div>
