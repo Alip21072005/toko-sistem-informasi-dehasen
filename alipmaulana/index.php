@@ -162,7 +162,7 @@
                 <div class="col-md-4 col-lg-3 mx-auto mt-3">
                     <h5 class="text-uppercase mb-4 fw-bold small">Kontak Kami</h5>
                     <p class="small"><i class="bi bi-geo-alt-fill me-2"></i> Jakarta, Indonesia</p>
-                    <p class="small"><i class="bi bi-whatsapp me-2"></i> +62 853-5761-7815</p>
+                    <p class="small"><i class="bi bi-whatsapp me-2"></i> +62 857-5876-9683</p>
                 </div>
             </div>
             <hr class="mb-4 bg-white">
