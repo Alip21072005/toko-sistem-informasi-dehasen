@@ -1,0 +1,23 @@
+name: Auto Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main # Pastikan ini sesuai dengan nama branch Anda (main atau master)
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Menjalankan Perintah Pull di VPS
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            cd /var/www/si-dehasen.cloud
+            git pull origin main
+            sudo chown -R www-data:www-data /var/www/si-dehasen.cloud
+            sudo chmod -R 755 /var/www/si-dehasen.cloud
