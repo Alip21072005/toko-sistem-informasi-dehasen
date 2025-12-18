@@ -27,7 +27,6 @@ while($row = mysqli_fetch_assoc($query)){
     :root {
         --primary-color: #0d6efd;
         --accent-color: #6610f2;
-        --nada-color: #0d9488;
     }
 
     body {
@@ -124,16 +123,15 @@ while($row = mysqli_fetch_assoc($query)){
         <div class="row row-cols-1 row-cols-md-3 g-4">
 
             <div class="col" data-aos="fade-up" data-aos-delay="50">
-                <div class="card card-toko h-100 p-4" style="border: 2px solid var(--nada-color);">
-                    <span class="visit-count" ">
-                        <i class=" bi bi-eye-fill me-1"></i>
+                <div class="card card-toko h-100 p-4">
+                    <span class="visit-count">
+                        <i class="bi bi-eye-fill me-1"></i>
                         <?php echo number_format($stats['nada'] ?? 0); ?>
                     </span>
                     <div class="text-center mt-3">
-                        <div class="icon-circle" style="color: var(--nada-color);"><i class="bi bi-gem"></i></div>
+                        <div class="icon-circle"><i class="bi bi-stars"></i></div>
                         <h4 class="fw-bold mb-4">Nada</h4>
-                        <a href="visit.php?toko=nada" class="btn btn-modern"
-                            style="background: var(--nada-color);">Masuk Toko</a>
+                        <a href="visit.php?toko=nada" class="btn btn-modern">Masuk Toko</a>
                     </div>
                 </div>
             </div>
@@ -203,7 +201,7 @@ while($row = mysqli_fetch_assoc($query)){
                     <span class="visit-count"><i class="bi bi-eye-fill me-1"></i>
                         <?php echo number_format($stats['yosia'] ?? 0); ?></span>
                     <div class="text-center mt-3">
-                        <div class="icon-circle"><i class="bi bi-lightning-charge"></i></div>
+                        <div class="icon-circle"><i class="bi bi-stars"></i></div>
                         <h4 class="fw-bold mb-4">Yosia</h4>
                         <a href="visit.php?toko=yosia" class="btn btn-modern">Masuk Toko</a>
                     </div>
