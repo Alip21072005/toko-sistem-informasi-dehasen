@@ -158,6 +158,18 @@ while($row = mysqli_fetch_assoc($query)){
                 </div>
             </div>
 
+            <div class="col" data-aos="fade-up" data-aos-delay="300">
+                <div class="card card-toko h-100 p-4">
+                    <span class="visit-count"><i class="bi bi-eye-fill me-1"></i>
+                        <?php echo number_format($stats['rafifaturiqbal'] ?? 0); ?></span>
+                    <div class="text-center mt-3">
+                        <div class="icon-circle"><i class="bi bi-cup-hot-fill"></i></div>
+                        <h4 class="fw-bold mb-4">Toko Rafi</h4>
+                        <a href="visit.php?toko=rafifaturiqbal" class="btn btn-modern">Masuk Toko</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
