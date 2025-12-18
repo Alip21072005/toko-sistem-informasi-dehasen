@@ -95,7 +95,7 @@
                         <p class="card-text text-muted">Sistem informasi penjualan makanan dan minuman dengan pemesanan
                             via WhatsApp.</p>
                         <div class="mt-auto pt-3">
-                            <a href="/alipmaulana/" class="btn btn-primary btn-visit w-100">
+                            <a href="alipmaulana/" class="btn btn-primary btn-visit w-100">
                                 Buka Website <i class="bi bi-box-arrow-up-right ms-2"></i>
                             </a>
                         </div>
