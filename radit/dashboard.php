@@ -137,7 +137,7 @@
             <div class="card stat-card p-4">
                 <div class="d-flex justify-content-between">
                     <div>
-                        <h6>Kategori Sepatu</h6>
+                        <h6>Kategori menu</h6>
                         <h3>10</h3>
                     </div>
                     <div class="icon">📦</div>
@@ -174,7 +174,7 @@
 <div class="container mt-5">
     <h4 class="content-title">gabutin CoffeShop</h4>
     <p class="text-muted mt-2">
-        <strong>Gabutin CoffeShop</strong> aGabutin Coffeeshop adalah kedai kopi modern yang hadir sebagai ruang santai untuk menikmati kopi berkualitas dengan suasana hangat dan nyaman. Mengusung konsep simple, cozy, dan kekinian, Gabutin Coffeeshop menyajikan berbagai pilihan minuman kopi dan non-kopi yang diracik dari biji kopi pilihan serta bahan berkualitas.
+        <strong>Gabutin CoffeShop</strong> adalah kedai kopi modern yang hadir sebagai ruang santai untuk menikmati kopi berkualitas dengan suasana hangat dan nyaman. Mengusung konsep simple, cozy, dan kekinian, Gabutin Coffeeshop menyajikan berbagai pilihan minuman kopi dan non-kopi yang diracik dari biji kopi pilihan serta bahan berkualitas.
     </p>
 
     <p class="text-muted">
