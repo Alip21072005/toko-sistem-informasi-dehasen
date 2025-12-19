@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kedai Kito Online</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-image: url('image/background.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .login-container {
+            max-width: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" method="POST" class="login-container">
+        <div class="container">
+            <div class="card">
+                <div class="card-header text-center">
+                    <strong>LOGIN</strong>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" name="user" id="username" placeholder="Username" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputPassword5" class="form-label">Password</label>
+                        <input type="password" id="inputPassword5" class="form-control" name="pass" placeholder="Password" required>
+                    </div>
+                </div>
+                <div class="card-footer text-center">
+                    <button type="submit" name="submit" class="btn btn-primary w-100">Login</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <?php
+    if (isset($_POST['submit'])) {
+        session_start();
+        include 'koneksi.php';
+
+        $user = mysqli_real_escape_string($conn, $_POST['user']);
+        $pass = mysqli_real_escape_string($conn, $_POST['pass']);
+
+        $cek = mysqli_query($conn, "SELECT * FROM admin WHERE username ='" . $user . "' AND password = '" . MD5($pass) . "'");
+
+        if (mysqli_num_rows($cek) > 0) {
+            $d = mysqli_fetch_object($cek);
+            $_SESSION['status_login'] = true;
+            $_SESSION['a_global'] = $d;
+            $_SESSION['id'] = $d->idadmin;
+            echo '<script>window.location="dashboard.php"</script>';
+        } else {
+            echo '<script>alert("Username atau Password Anda Salah !!")</script>';
+        }
+    }
+    ?>
+</body>
+
+</html>

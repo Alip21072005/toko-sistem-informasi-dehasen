@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Produk | Kedai Kito Online</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        .produk-section {
+            background-image: url('image/background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding-top: 100px;
+            padding-bottom: 80px;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">Kedai Kito</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="produktoko.php">Data Produk</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.php">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Produk Section -->
+    <div class="produk-section">
+        <div class="container">
+            <h3 class="mb-4 text-white">Makanan Minuman Terlaris</h3>
+            <div class="row">
+                <?php
+                include 'koneksi.php';
+                $produk = mysqli_query($conn, "SELECT * FROM produk WHERE status = 1 ORDER BY idproduk DESC LIMIT 8");
+                if (mysqli_num_rows($produk) > 0) {
+                    while ($p = mysqli_fetch_array($produk)) {
+                ?>
+                        <div class="col-md-3 mb-4">
+                            <div class="card h-100">
+                                <img src="image/<?php echo $p['gambar'] ?>" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?php echo $p['namaproduk'] ?></h5>
+                                    <p class="card-text"><?php echo $p['deskripsi'] ?></p>
+                                    <p class="text-primary fw-bold">Rp. <?php echo $p['harga'] ?></p>
+                                    <a href="https://wa.me/6285357617815" target="_blank" class="btn btn-secondary">Beli</a>
+                                </div>
+                            </div>
+                        </div>
+                <?php }
+                } else { ?>
+                    <p class="text-white">Produk Tidak Ada</p>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="bg-primary text-light p-3 text-center">
+            <small>&copy; 2025 - Kedai Kito Online</small>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
