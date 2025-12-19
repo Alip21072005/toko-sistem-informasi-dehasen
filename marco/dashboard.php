@@ -16,7 +16,8 @@
         <nav class="navbar navbar-expand-lg bg-primary navbar-dark ">
             <div class="container">
                 <a class="navbar-brand" href="#">Kedai Kito</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -44,7 +45,7 @@
     <div class="section">
         <div class="container ">
             <h3>Selamat Datang Administrator</h3>
-           yooww
+            yooww
         </div>
     </div>
 
@@ -56,5 +57,6 @@
     </footer>
 
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </html>

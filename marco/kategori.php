@@ -25,7 +25,8 @@ if ($_SESSION['status_login'] != true) {
         <nav class="navbar navbar-expand-lg bg-primary navbar-dark ">
             <div class="container">
                 <a class="navbar-brand" href="#">Kedai Kito</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -73,18 +74,19 @@ if ($_SESSION['status_login'] != true) {
                             if (mysqli_num_rows($kategori) > 0) {
                                 while ($row = mysqli_fetch_array($kategori)) {
                             ?>
-                                    <tr>
-                                        <td><?php echo $no++ ?></td>
-                                        <td><?php echo $row['namakategori'] ?></td>
-                                        <td><a href="edit_kategori.php?id=<?php echo $row['idkategori'] ?>">Edit</a> |
-                                            <a href="proses_hapus.php?idk=<?php echo $row['idkategori'] ?>" onclick=" return confirm('Yakin ingin hapus ?')">Hapus</a>
-                                        </td>
-                                    </tr>
-                                <?php }
+                            <tr>
+                                <td><?php echo $no++ ?></td>
+                                <td><?php echo $row['namakategori'] ?></td>
+                                <td><a href="edit_kategori.php?id=<?php echo $row['idkategori'] ?>">Edit</a> |
+                                    <a href="proses_hapus.php?idk=<?php echo $row['idkategori'] ?>"
+                                        onclick=" return confirm('Yakin ingin hapus ?')">Hapus</a>
+                                </td>
+                            </tr>
+                            <?php }
                             } else { ?>
-                                <tr>
-                                    <td colspan="3">Tidak Ada Data</td>
-                                </tr>
+                            <tr>
+                                <td colspan="3">Tidak Ada Data</td>
+                            </tr>
                             <?php } ?>
                         </tbody>
                     </table>
@@ -101,5 +103,6 @@ if ($_SESSION['status_login'] != true) {
     </footer>
 
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </html>
