@@ -23,12 +23,13 @@
                         </div>
                         <div class="card-body">
                             <div class="mb-3">
-                                <labelclass="username">Username</label>
-                                    <input type="username" class="form-control" name="user" placeholder="Username">
+                                <label class="username">Username</label>
+                                <input type="username" class="form-control" name="user" placeholder="Username">
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" id="inputPassword5" class="form-control" name="pass" placeholder="Password">
+                                <input type="password" id="inputPassword5" class="form-control" name="pass"
+                                    placeholder="Password">
                             </div>
                         </div>
                         <div class="card-footer">

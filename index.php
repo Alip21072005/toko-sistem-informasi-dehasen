@@ -190,11 +190,11 @@ while($row = mysqli_fetch_assoc($query)){
             <div class="col" data-aos="fade-up" data-aos-delay="500">
                 <div class="card card-toko h-100 p-4">
                     <span class="visit-count"><i class="bi bi-eye-fill me-1"></i>
-                        <?php echo number_format($stats['najwastore'] ?? 0); ?></span>
+                        <?php echo number_format($stats['berliana'] ?? 0); ?></span>
                     <div class="text-center mt-3">
                         <div class="icon-circle"><i class="bi bi-stars"></i></div>
-                        <h4 class="fw-bold mb-4">Najwa Store</h4>
-                        <a href="visit.php?toko=najwastore" class="btn btn-modern">Masuk Toko</a>
+                        <h4 class="fw-bold mb-4">Berliana</h4>
+                        <a href="visit.php?toko=berliana" class="btn btn-modern">Masuk Toko</a>
                     </div>
                 </div>
             </div>
@@ -255,12 +255,12 @@ while($row = mysqli_fetch_assoc($query)){
                 <div class="card card-toko h-100 p-4">
                     <span class="visit-count">
                         <i class="bi bi-eye-fill me-1"></i>
-                        <?php echo number_format($stats['princessfina'] ?? 0); ?>
+                        <?php echo number_format($stats['fina'] ?? 0); ?>
                     </span>
                     <div class="text-center mt-3">
                         <div class="icon-circle"><i class="bi bi-lightning-fill"></i></div>
-                        <h4 class="fw-bold mb-4">Princess Fina</h4>
-                        <a href="visit.php?toko=princessfina" class="btn btn-modern">Masuk Toko</a>
+                        <h4 class="fw-bold mb-4">Fina</h4>
+                        <a href="visit.php?toko=fina" class="btn btn-modern">Masuk Toko</a>
                     </div>
                 </div>
             </div>
@@ -287,7 +287,7 @@ while($row = mysqli_fetch_assoc($query)){
                     </span>
                     <div class="text-center mt-3">
                         <div class="icon-circle"><i class="bi bi-lightning-fill"></i></div>
-                        <h4 class="fw-bold mb-4">Della</h4>
+                        <h4 class="fw-bold mb-4">Della Rahmadani</h4>
                         <a href="visit.php?toko=dellar" class="btn btn-modern">Masuk Toko</a>
                     </div>
                 </div>
