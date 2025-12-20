@@ -1,0 +1,198 @@
+<?php
+include "koneksi.php";
+?>
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Produk | Kedai Kito Online</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-color: #ffe6eb;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background-color: #fff5f7 !important;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .navbar-brand,
+        .navbar-nav .nav-link {
+            color: #5a2a33 !important;
+            font-weight: 600;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: #ff4d6d !important;
+        }
+
+        /* SECTION TITLE */
+        .section-title h3 {
+            font-weight: 700;
+            color: #ff4d6d;
+        }
+
+        /* CARD */
+        .card {
+            border-radius: 20px;
+            border: none;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+
+        /* TABLE */
+        .table {
+            margin-bottom: 0;
+        }
+
+        .table thead th {
+            background: #fff0f3;
+            color: #5a2a33;
+            font-weight: 600;
+            border-bottom: 2px solid #ffb3c1;
+        }
+
+        .table tbody tr {
+            transition: 0.25s;
+        }
+
+        .table tbody tr:hover {
+            background-color: #fff5f7;
+            transform: scale(1.01);
+        }
+
+        /* IMAGE */
+        .table img {
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        /* BUTTON */
+        .btn-secondary {
+            background-color: #ff758f;
+            border: none;
+            border-radius: 30px;
+            padding: 6px 16px;
+        }
+
+        .btn-secondary:hover {
+            background-color: #ff4d6d;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #ff4d6d;
+            color: #fff;
+            margin-top: 80px;
+        }
+        section.py-5 {
+            background-image: url("image/BG3.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">Kedai Kito</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="produk.php">Produk Kami</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.php">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- CONTENT -->
+<section class="py-5">
+    <div class="container">
+
+        <div class="section-title text-center mb-4">
+            <h3>Pilihan Menu Terbaik Dari Kami</h3>
+            <p class="text-muted">Ngopi santai & cerita hidup dari secangkir kopi ☕</p>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+
+                <table class="table table-borderless align-middle">
+                    <thead>
+                        <tr>
+                            <th width="80">No</th>
+                            <th>Nama Produk</th>
+                            <th>Harga</th>
+                            <th>Deskripsi</th>
+                            <th>Gambar</th>
+                            <th width="120">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $no = 1;
+                        $produk = mysqli_query($conn, "SELECT * FROM produk LEFT JOIN kategori USING (idkategori) ORDER BY idproduk DESC");
+                        if (mysqli_num_rows($produk) > 0) {
+                            while ($row = mysqli_fetch_array($produk)) {
+                        ?>
+                        <tr>
+                            <td><?= $no++ ?></td>
+                            <td><?= $row['namaproduk'] ?></td>
+                            <td><strong style="color:#ff4d6d;">Rp <?= number_format($row['harga']) ?></strong></td>
+                            <td><?= $row['deskripsi'] ?></td>
+                            <td>
+                                <img src="image/<?= $row['gambar'] ?>" width="70">
+                            </td>
+                            <td>
+                                <a href="https://wa.me/6285709922998?text=Saya%20ingin%20memesan%20<?= $row['namaproduk'] ?>"
+                                   target="_blank"
+                                   class="btn btn-secondary">
+                                    Beli ☕
+                                </a>
+                            </td>
+                        </tr>
+                        <?php }
+                        } else { ?>
+                        <tr>
+                            <td colspan="6" class="text-center text-muted">Tidak Ada Data</td>
+                        </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="text-center p-3">
+    <small>Copyright &copy; 2025 - Viva La Vida Online</small>
+</footer>
+
+</body>
+</html>
