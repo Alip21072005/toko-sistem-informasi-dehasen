@@ -50,12 +50,12 @@ include "koneksi.php";
             <!-- Produk 1 -->
             <div class="col-md-4">
                 <div class="card shadow h-100">
-                    <img src="image/produk1765296616.jpg" class="card-img-top" alt="Kopi Hitam">
+                    <img src="image/produk1765296616.jpg" class="card-img-top" alt="sepatu nike">
                     <div class="card-body text-center">
                         <h5 class="card-title fw-bold">Sepatu Nike</h5>
                         <p class="card-text">Tampil Keren Tanpa Mengorbankan Kenyamanan.</p>
-                        <p class="fw-bold text-primary">3299000</p>
-                        <a href="https://wa.me/085839745049?text=Halo%20saya%20ingin%20order%20Kopi%20Hitam"
+                        <p class="fw-bold text-primary">399000</p>
+                        <a href="https://wa.me/6285839745049?text=Halo%20saya%20ingin%20memesan%20sepatu%20Nike"
                            class="btn btn-success w-100">
                            Order via WhatsApp
                         </a>
@@ -64,13 +64,13 @@ include "koneksi.php";
             </div>
 <div class="col-md-4">
                 <div class="card shadow h-100">
-                    <img src="image/produk1765296745.jpg" class="card-img-top" alt="Kopi Hitam">
+                    <img src="image/produk1765296745.jpg" class="card-img-top" alt="sepatu puma">
                     <div class="card-body text-center">
                         <h5 class="card-title fw-bold">Sepatu Puma</h5>
                         <p class="card-text">Tampil Keren Tanpa Mengorbankan Kenyamanan.</p>
-                        <p class="fw-bold text-primary">3299000</p>
-                        <a href="https://wa.me/085839745049?text=Halo%20saya%20ingin%20order%20Kopi%20Hitam"
-                           class="btn btn-success w-100">
+                        <p class="fw-bold text-primary">1299000</p>
+                        <a href="https://wa.me/6285839745049?text=Halo%20saya%20ingin%20memesan%20sepatu%20Puma"
+                           class="btn btn-success w-100">>
                            Order via WhatsApp
                         </a>
                     </div>
@@ -79,12 +79,12 @@ include "koneksi.php";
             <!-- Produk 2 -->
             <div class="col-md-4">
                 <div class="card shadow h-100">
-                    <img src="image/produk1765296702.jpg" class="card-img-top" alt="Kopi Susu">
+                    <img src="image/produk1765296702.jpg" class="card-img-top" alt="snew balence">
                     <div class="card-body text-center">
                         <h5 class="card-title fw-bold">Snew balence 530</h5>
                         <p class="card-text">Perpaduan Teknologi dan Gaya Modern.</p>
-                        <p class="fw-bold text-primary">Rp 2999000</p>
-                        <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20order%20Kopi%20Susu"
+                        <p class="fw-bold text-primary">Rp 4999000</p>
+                        <a href="https://wa.me/6285839745049?text=Halo%20saya%20ingin%20memesan%20sepatu%20New%20Balance%20530"
                            class="btn btn-success w-100">
                            Order via WhatsApp
                         </a>
@@ -93,38 +93,19 @@ include "koneksi.php";
             </div>
                         <div class="col-md-4">
                 <div class="card shadow h-100">
-                    <img src="image/produk1765296833.jpg" class="card-img-top" alt="Kopi Susu">
+                    <img src="image/produk1765296833.jpg" class="card-img-top" alt="sepatu adidas">
                     <div class="card-body text-center">
                         <h5 class="card-title fw-bold">sepatu adidas</h5>
                         <p class="card-text">Nyaman Dipakai, Keren Dilihat.</p>
-                        <p class="fw-bold text-primary">Rp 2999000</p>
-                        <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20order%20Kopi%20Susu"
+                        <p class="fw-bold text-primary">Rp 5999000</p>
+                        <a href="https://wa.me/6285839745049?text=Halo%20saya%20ingin%20memesan%20sepatu%20Adidas"
                            class="btn btn-success w-100">
                            Order via WhatsApp
                         </a>
                     </div>
                 </div>
 
-            <!-- Produk 3 -->
-            <div class="col-md-4">
-                <div class="card shadow h-100">
-                    <img src="image/produk1765296745.jpg" class="card-img-top" alt="Roti Bakar">
-                    <div class="card-body text-center">
-                        <h5 class="card-title fw-bold">Sepatu Puma</h5>
-                        <p class="card-text">Desain Klasik dengan Sentuhan Modern.</p>
-                        <p class="fw-bold text-primary">Rp 1299000</p>
-                        <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20order%20Roti%20Bakar"
-                           class="btn btn-success w-100">
-                           Order via WhatsApp
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
+            
 <!-- ===== FOOTER ===== -->
 <footer class="bg-primary text-light text-center py-3">
     <small>Copyright &copy; 2025 - Kedai Kito Online</small>

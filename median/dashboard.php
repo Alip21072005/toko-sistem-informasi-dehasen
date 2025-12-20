@@ -41,8 +41,11 @@ include "koneksi.php";
     <!--- content --->
     <div class="section">
         <div class="container ">
-           <h3>selamat datang breee</h3>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus eos veniam delectus facilis est. Sed sapiente iusto eius quod odit fugiat sint autem ullam at maxime modi ad, aspernatur est inventore esse illo illum neque saepe voluptatum repellat adipisci molestias qui ducimus? Ut sunt quisquam magnam doloribus voluptates error cum, totam culpa incidunt repellendus et, iste numquam expedita. Excepturi adipisci nemo, voluptate, aliquid aut laborum provident aspernatur accusamus assumenda vero vitae quas. Facere quaerat cupiditate repellat totam suscipit ex exercitationem dolore tempore natus nihil at debitis, esse libero deleniti? Consequatur minima sit, eum eligendi unde, repellat, recusandae odio quos error harum ducimus laboriosam illo quasi ratione dignissimos. Voluptate iste ab consectetur accusamus blanditiis quaerat corporis, ut assumenda consequatur. Quaerat quia voluptatem, dicta qui magnam rerum explicabo cupiditate. Libero quas distinctio mollitia, cupiditate quod architecto quisquam itaque nobis reiciendis facere, maxime vitae laboriosam! Quisquam sunt quam vel expedita ducimus culpa voluptatibus.        
+           <h3>Selamat datang di <strong>KedaiKito</strong></h3>
+          Kami menyediakan berbagai pilihan sepatu berkualitas dari merek ternama dengan desain modern,
+nyaman digunakan, dan harga yang bersaing. Kepuasan pelanggan adalah prioritas kami, sehingga
+setiap produk yang kami tawarkan telah melalui proses seleksi kualitas terbaik.
+</p>
                 </div>
             </div>
         </div>
