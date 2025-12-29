@@ -1,10 +1,36 @@
+<?php
+// Letakkan logika login di paling atas untuk menghindari error header/session
+session_start();
+include 'koneksi.php';
+
+if (isset($_POST['submit'])) {
+    $user = mysqli_real_escape_string($conn, $_POST['user']);
+    $pass = mysqli_real_escape_string($conn, $_POST['pass']);
+
+    // Menggunakan MD5 sesuai dengan kode awal Anda
+    $cek = mysqli_query($conn, "SELECT * FROM admin WHERE username ='" . $user . "' AND password = '" . MD5($pass) . "'");
+
+    if (mysqli_num_rows($cek) > 0) {
+        $d = mysqli_fetch_object($cek);
+        $_SESSION['status_login'] = true;
+        $_SESSION['a_global'] = $d;
+        $_SESSION['id'] = $d->idadmin;
+        
+        // Pengalihan menggunakan JavaScript
+        echo '<script>window.location="dashboard.php"</script>';
+        exit; 
+    } else {
+        echo '<script>alert("Username atau Password salah!")</script>';
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="id">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login Admin | Toko Boneka Oktifia</title>
+    <title>Login Admin | Toko Boneka</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
@@ -12,7 +38,6 @@
     <style>
     body {
         font-family: 'Poppins', sans-serif;
-        /* Gradasi Pink yang manis */
         background: linear-gradient(135deg, #ff69b4 0%, #ffc0cb 100%);
         height: 100vh;
         display: flex;
@@ -41,7 +66,6 @@
     .card-header h4 {
         font-weight: 600;
         color: #ff1493;
-        /* Deep Pink */
         margin-bottom: 5px;
         letter-spacing: 1px;
     }
@@ -95,8 +119,8 @@
             <div class="icon-box">
                 <i class="bi bi-person-heart"></i>
             </div>
-            <h4>OKTIFIA ADMIN</h4>
-            <p class="text-muted small">Kelola koleksi boneka kesayangan</p>
+            <h4>ADMIN LOGIN</h4>
+            <p class="text-muted small">Silahkan masuk ke akun Anda</p>
         </div>
         <div class="card-body p-4">
             <form action="" method="POST">
@@ -104,16 +128,16 @@
                     <label class="form-label small fw-bold text-muted text-uppercase">Username</label>
                     <div class="input-group">
                         <span class="input-group-text border-end-0"><i class="bi bi-person"></i></span>
-                        <input type="text" class="form-control border-start-0" name="user"
-                            placeholder="Username Oktifia" required autofocus>
+                        <input type="text" class="form-control border-start-0" name="user" placeholder="Username"
+                            required autofocus>
                     </div>
                 </div>
                 <div class="mb-4">
                     <label class="form-label small fw-bold text-muted text-uppercase">Password</label>
                     <div class="input-group">
                         <span class="input-group-text border-end-0"><i class="bi bi-lock"></i></span>
-                        <input type="password" class="form-control border-start-0" name="pass"
-                            placeholder="Password Admin" required>
+                        <input type="password" class="form-control border-start-0" name="pass" placeholder="Password"
+                            required>
                     </div>
                 </div>
                 <button type="submit" name="submit" class="btn btn-login w-100 shadow-sm text-uppercase">
@@ -129,28 +153,6 @@
             <small class="text-muted">&copy; 2025 <strong>Toko Boneka Oktifia</strong></small>
         </div>
     </div>
-
-    <?php
-    if (isset($_POST['submit'])) {
-        session_start();
-        include 'koneksi.php';
-
-        $user = mysqli_real_escape_string($conn, $_POST['user']);
-        $pass = mysqli_real_escape_string($conn, $_POST['pass']);
-
-        $cek = mysqli_query($conn, "SELECT * FROM admin WHERE username ='" . $user . "' AND password = '" . MD5($pass) . "'");
-
-        if (mysqli_num_rows($cek) > 0) {
-            $d = mysqli_fetch_object($cek);
-            $_SESSION['status_login'] = true;
-            $_SESSION['a_global'] = $d;
-            $_SESSION['id'] = $d->idadmin;
-            echo '<script>window.location="dashboard.php"</script>';
-        } else {
-            echo '<script>alert("Maaf Oktifia, Username atau Password salah!")</script>';
-        }
-    }
-    ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
