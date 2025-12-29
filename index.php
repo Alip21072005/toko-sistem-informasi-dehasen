@@ -38,7 +38,9 @@ $daftar_toko = [
     ['id' => 'david', 'nama' => 'David', 'icon' => 'bi-laptop', 'color' => '#2f3542'],
     ['id' => 'jesika', 'nama' => 'Jesika', 'icon' => 'bi-emoji-smile-fill', 'color' => '#7bed9f'],
     ['id' => 'arya', 'nama' => 'Arya', 'icon' => 'bi-fire', 'color' => '#ff4757'],
-    ['id' => 'fella', 'nama' => 'Fella', 'icon' => 'bi-gift-fill', 'color' => '#5352ed']
+    ['id' => 'fella', 'nama' => 'Fella', 'icon' => 'bi-gift-fill', 'color' => '#5352ed'],
+    ['id' => 'naufal', 'nama' => 'Naufal Store', 'icon' => 'bi-cpu', 'color' => '#341f97'],
+    ['id' => 'bintank', 'nama' => 'Bintank', 'icon' => 'bi-star-fill', 'color' => '#f368e0']
 ];
 ?>
 <!DOCTYPE html>
