@@ -23,7 +23,7 @@ $total_produk = mysqli_num_rows($query_produk);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dashboard | Kedai Kito Online</title>
+    <title>Dashboard Admin | Toko Boneka Oktifia</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
@@ -38,7 +38,8 @@ $total_produk = mysqli_num_rows($query_produk);
         display: flex;
         flex-direction: column;
         font-family: 'Poppins', sans-serif;
-        background-color: #f8f9fa;
+        background-color: #fff5f7;
+        /* Background Pink Sangat Muda */
     }
 
     main {
@@ -46,35 +47,54 @@ $total_produk = mysqli_num_rows($query_produk);
     }
 
     .navbar {
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        background-color: #ff69b4 !important;
+        /* Pink Cerah */
+        box-shadow: 0 2px 10px rgba(255, 105, 180, 0.2);
     }
 
     .welcome-section {
-        background: linear-gradient(135deg, #0d6efd 0%, #0099ff 100%);
+        background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%);
         color: white;
         padding: 3rem;
         border-radius: 1.5rem;
         border: none;
+        box-shadow: 0 10px 20px rgba(255, 20, 147, 0.2);
     }
 
     .card-stat {
-        border: none;
-        border-radius: 1rem;
+        border: 2px solid #ffc0cb;
+        border-radius: 1.5rem;
         transition: all 0.3s ease;
+        background: white;
     }
 
     .card-stat:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+        box-shadow: 0 10px 25px rgba(255, 105, 180, 0.2) !important;
+        border-color: #ff69b4;
+    }
+
+    .text-pink-custom {
+        color: #ff1493 !important;
+    }
+
+    .btn-pink-outline {
+        color: #ff1493;
+        border-color: #ff1493;
+    }
+
+    .btn-pink-outline:hover {
+        background-color: #ff1493;
+        color: white;
     }
     </style>
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
-                <a class="navbar-brand fw-bold" href="#"><i class="bi bi-shop me-2"></i>Kedai Kito</a>
+                <a class="navbar-brand fw-bold" href="#"><i class="bi bi-heart-fill me-2"></i>Oktifia Doll</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -84,8 +104,8 @@ $total_produk = mysqli_num_rows($query_produk);
                         <li class="nav-item"><a class="nav-link" href="kategori.php">Kategori</a></li>
                         <li class="nav-item"><a class="nav-link" href="produk.php">Produk</a></li>
                         <li class="nav-item">
-                            <a class="nav-link btn btn-danger btn-sm text-white ms-lg-2 px-3"
-                                href="keluar.php">Logout</a>
+                            <a class="nav-link btn btn-light btn-sm text-danger ms-lg-2 px-3 fw-bold" href="keluar.php"
+                                onclick="return confirm('Apakah Oktifia yakin ingin keluar?')">Logout</a>
                         </li>
                     </ul>
                 </div>
@@ -94,29 +114,33 @@ $total_produk = mysqli_num_rows($query_produk);
     </header>
 
     <main class="container my-5">
-        <div class="welcome-section shadow-sm mb-4">
-            <h2 class="fw-bold">Selamat Datang👋</h2>
-            <p class="mb-0">Senang melihat Anda kembali. Berikut ringkasan toko Anda hari ini.</p>
+        <div class="welcome-section mb-5">
+            <h2 class="fw-bold">Selamat Datang, Oktifia! 👋</h2>
+            <p class="mb-0">Kelola stok boneka dan kategori tokomu dengan mudah di sini.</p>
         </div>
 
         <div class="row g-4 text-center">
             <div class="col-md-6">
-                <div class="card card-stat shadow-sm p-5">
-                    <i class="bi bi-tags text-primary fs-1 mb-2"></i>
-                    <h5 class="text-muted">Total Kategori</h5>
-                    <h2 class="fw-bold display-4"><?php echo $total_kategori; ?></h2>
-                    <a href="kategori.php" class="btn btn-outline-primary btn-sm mt-3 mx-auto"
-                        style="max-width: 150px;">Lihat Detail</a>
+                <div class="card card-stat shadow-sm p-5 h-100">
+                    <i class="bi bi-tags-fill text-pink-custom fs-1 mb-2"></i>
+                    <h5 class="text-muted">Jenis Koleksi</h5>
+                    <h2 class="fw-bold display-4 text-pink-custom"><?php echo $total_kategori; ?></h2>
+                    <p class="small text-muted">Kategori Boneka</p>
+                    <a href="kategori.php" class="btn btn-pink-outline btn-sm mt-3 mx-auto px-4 rounded-pill">
+                        Atur Kategori
+                    </a>
                 </div>
             </div>
 
             <div class="col-md-6">
-                <div class="card card-stat shadow-sm p-5">
-                    <i class="bi bi-box-seam text-success fs-1 mb-2"></i>
-                    <h5 class="text-muted">Total Produk</h5>
-                    <h2 class="fw-bold display-4"><?php echo $total_produk; ?></h2>
-                    <a href="produk.php" class="btn btn-outline-success btn-sm mt-3 mx-auto"
-                        style="max-width: 150px;">Lihat Detail</a>
+                <div class="card card-stat shadow-sm p-5 h-100">
+                    <i class="bi bi-stars text-pink-custom fs-1 mb-2"></i>
+                    <h5 class="text-muted">Total Boneka</h5>
+                    <h2 class="fw-bold display-4 text-pink-custom"><?php echo $total_produk; ?></h2>
+                    <p class="small text-muted">Produk Terdaftar</p>
+                    <a href="produk.php" class="btn btn-pink-outline btn-sm mt-3 mx-auto px-4 rounded-pill">
+                        Kelola Produk
+                    </a>
                 </div>
             </div>
         </div>
@@ -124,7 +148,7 @@ $total_produk = mysqli_num_rows($query_produk);
 
     <footer class="bg-white border-top py-4 shadow-sm">
         <div class="container text-center">
-            <small class="text-muted">Copyright &copy; 2025 - <strong>Kedai Kito Online</strong>. All rights
+            <small class="text-muted">Copyright &copy; 2025 - <strong>Toko Boneka Oktifia</strong>. All rights
                 reserved.</small>
         </div>
     </footer>

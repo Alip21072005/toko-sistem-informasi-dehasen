@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Semua Produk | Kedai Kito Online</title>
+    <title>Koleksi Boneka | Toko Boneka Oktifia</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
@@ -13,36 +13,44 @@
     <style>
     body {
         font-family: 'Poppins', sans-serif;
-        background-color: #f8f9fa;
+        background-color: #fff5f7;
+        /* Pink sangat muda */
+    }
+
+    /* Navbar Pink */
+    .bg-pink-custom {
+        background-color: #ff69b4 !important;
     }
 
     .navbar {
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 10px rgba(255, 105, 180, 0.2);
     }
 
     .page-header {
-        background-color: #fff;
+        background-color: #ffffff;
         padding: 60px 0;
         margin-bottom: 30px;
-        border-bottom: 1px solid #eee;
+        border-bottom: 3px solid #ffc0cb;
     }
 
     .card-produk {
-        border: none;
-        border-radius: 15px;
+        border: 2px solid #ffc0cb;
+        border-radius: 20px;
         overflow: hidden;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 4px 15px rgba(255, 105, 180, 0.1);
         height: 100%;
+        background: white;
     }
 
     .card-produk:hover {
         transform: translateY(-8px);
-        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 12px 20px rgba(255, 105, 180, 0.3);
+        border-color: #ff69b4;
     }
 
     .card-produk img {
-        height: 200px;
+        height: 250px;
         object-fit: cover;
     }
 
@@ -50,41 +58,53 @@
         position: absolute;
         top: 10px;
         left: 10px;
-        background: rgba(13, 110, 253, 0.9);
+        background: rgba(255, 20, 147, 0.8);
         color: white;
-        padding: 5px 12px;
+        padding: 5px 15px;
         border-radius: 20px;
         font-size: 0.75rem;
+        font-weight: 600;
     }
 
     .harga {
-        color: #0d6efd;
+        color: #ff1493;
         font-weight: 600;
-        font-size: 1.15rem;
+        font-size: 1.2rem;
     }
 
     .btn-beli {
-        border-radius: 10px;
+        border-radius: 12px;
         font-weight: 600;
-        background-color: #25d366;
+        background-color: #ff69b4;
         border: none;
         color: white;
+        transition: 0.3s;
+    }
+
+    .btn-beli:hover {
+        background-color: #ff1493;
+        color: white;
+        box-shadow: 0 4px 12px rgba(255, 20, 147, 0.3);
+    }
+
+    .footer {
+        background-color: #ff69b4;
     }
     </style>
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-primary navbar-dark sticky-top">
+        <nav class="navbar navbar-expand-lg bg-pink-custom navbar-dark sticky-top">
             <div class="container">
-                <a class="navbar-brand fw-bold" href="./"><i class="bi bi-shop me-2"></i>Kedai Kito</a>
+                <a class="navbar-brand fw-bold" href="./"><i class="bi bi-heart-fill me-2"></i>Oktifia Doll</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="./">Home</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="produktoko.php">Produk</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="produktoko.php">Koleksi Boneka</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-light ms-lg-3 px-4"
                                 href="login.php">Admin Login</a></li>
                     </ul>
@@ -95,8 +115,8 @@
 
     <div class="page-header text-center">
         <div class="container">
-            <h2 class="fw-bold text-primary">Katalog Menu Lengkap</h2>
-            <p class="text-muted">Pilih makanan dan minuman favoritmu, kami antar dengan cinta.</p>
+            <h2 class="fw-bold" style="color: #ff1493;">Katalog Boneka Lengkap</h2>
+            <p class="text-muted">Temukan koleksi boneka lucu untuk melengkapi hari-harimu.</p>
         </div>
     </div>
 
@@ -113,59 +133,63 @@
                     <img src="image/<?php echo $row['gambar'] ?>" class="card-img-top"
                         alt="<?php echo $row['namaproduk'] ?>">
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title fw-bold mb-2"><?php echo $row['namaproduk'] ?></h5>
+                        <h5 class="card-title fw-bold mb-2 text-dark"><?php echo $row['namaproduk'] ?></h5>
                         <p class="card-text text-muted small mb-3 flex-grow-1">
                             <?php echo (strlen($row['deskripsi']) > 80) ? substr($row['deskripsi'], 0, 80) . '...' : $row['deskripsi']; ?>
                         </p>
                         <p class="harga mb-3">Rp <?php echo number_format($row['harga'], 0, ',', '.') ?></p>
-                        <a href="https://wa.me/6285758769683?text=Halo%20Admin%20Kedai%20Kito,%20saya%20mau%20pesan%20<?php echo urlencode($row['namaproduk']) ?>"
+                        <a href="https://wa.me/628971249870?text=Halo%20Oktifia,%20saya%20ingin%20memesan%20boneka%20<?php echo urlencode($row['namaproduk']) ?>"
                             target="_blank" class="btn btn-beli w-100 py-2">
                             <i class="bi bi-whatsapp me-2"></i>Pesan Sekarang
                         </a>
                     </div>
                 </div>
             </div>
-            <?php } } ?>
+            <?php } } else { ?>
+            <div class="col-12 text-center">
+                <h5 class="text-muted">Maaf, saat ini belum ada koleksi boneka yang tersedia.</h5>
+            </div>
+            <?php } ?>
         </div>
     </div>
 
-    <footer class="bg-primary text-white pt-5 pb-4 mt-5">
+    <footer class="footer text-white pt-5 pb-4 mt-5">
         <div class="container text-center text-md-start">
             <div class="row">
                 <div class="col-md-4 col-lg-4 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 fw-bold"><i class="bi bi-shop me-2"></i>Kedai Kito Online</h5>
-                    <p class="small">Kami menyajikan cita rasa terbaik dengan bahan-bahan pilihan. Pesan sekarang dan
-                        nikmati kelezatan di setiap gigitannya!</p>
+                    <h5 class="text-uppercase mb-4 fw-bold"><i class="bi bi-heart-fill me-2"></i>Oktifia Doll</h5>
+                    <p class="small">Boneka kualitas premium dengan bahan yang lembut dan aman. Cocok untuk hadiah orang
+                        tersayang.</p>
                 </div>
                 <div class="col-md-2 col-lg-2 mx-auto mt-3">
                     <h5 class="text-uppercase mb-4 fw-bold small">Navigasi</h5>
                     <p class="small"><a href="./" class="text-white text-decoration-none">Home</a></p>
-                    <p class="small"><a href="produktoko.php" class="text-white text-decoration-none">Semua Produk</a>
+                    <p class="small"><a href="produktoko.php" class="text-white text-decoration-none">Koleksi Boneka</a>
                     </p>
                     <p class="small"><a href="login.php" class="text-white text-decoration-none">Admin Login</a></p>
                 </div>
                 <div class="col-md-4 col-lg-3 mx-auto mt-3">
                     <h5 class="text-uppercase mb-4 fw-bold small">Kontak Kami</h5>
-                    <p class="small"><i class="bi bi-geo-alt-fill me-2"></i> Jakarta, Indonesia</p>
-                    <p class="small"><i class="bi bi-whatsapp me-2"></i> +62 857-5876-9683</p>
+                    <p class="small"><i class="bi bi-geo-alt-fill me-2"></i> Indonesia</p>
+                    <p class="small"><i class="bi bi-whatsapp me-2"></i> +62 897-1249-870</p>
                 </div>
             </div>
             <hr class="mb-4 bg-white">
             <div class="row align-items-center">
                 <div class="col-md-7">
-                    <p class="small">Copyright &copy; 2025 <strong class="text-warning">Kedai Kito Online</strong>. All
+                    <p class="small">Copyright &copy; 2025 <strong class="text-light">Toko Boneka Oktifia</strong>. All
                         Rights Reserved.</p>
                 </div>
                 <div class="col-md-5 text-md-end">
                     <a href="#" class="text-white me-3 fs-4"><i class="bi bi-facebook"></i></a>
                     <a href="#" class="text-white me-3 fs-4"><i class="bi bi-instagram"></i></a>
-                    <a href="https://wa.me/6285758769683" class="text-white fs-4"><i class="bi bi-whatsapp"></i></a>
+                    <a href="https://wa.me/628971249870" class="text-white fs-4"><i class="bi bi-whatsapp"></i></a>
                 </div>
             </div>
         </div>
     </footer>
-</body>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 
 </html>

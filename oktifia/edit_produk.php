@@ -18,7 +18,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Edit Produk | Kedai Kito Online</title>
+    <title>Edit Koleksi Boneka | Toko Boneka Oktifia</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
@@ -34,50 +34,90 @@
         display: flex;
         flex-direction: column;
         font-family: 'Poppins', sans-serif;
-        background-color: #f4f7f6;
+        background-color: #fff5f7;
+        /* Pink Background */
     }
 
     main {
         flex: 1 0 auto;
     }
 
+    .navbar {
+        background-color: #ff69b4 !important;
+        box-shadow: 0 2px 10px rgba(255, 105, 180, 0.2);
+    }
+
     .card {
         border: none;
         border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 10px 30px rgba(255, 105, 180, 0.1);
     }
 
     .current-img {
         border-radius: 15px;
-        border: 3px solid #fff;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border: 4px solid #fff;
+        box-shadow: 0 5px 15px rgba(255, 105, 180, 0.2);
+        object-fit: cover;
     }
 
     .form-label {
         font-weight: 600;
-        color: #444;
+        color: #ff1493;
+    }
+
+    .form-control,
+    .form-select {
+        border-radius: 12px;
+        border: 1px solid #ffc0cb;
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+        border-color: #ff69b4;
+        box-shadow: 0 0 0 0.25rem rgba(255, 105, 180, 0.2);
     }
 
     .btn-update {
-        border-radius: 10px;
+        background-color: #ff69b4;
+        border: none;
+        border-radius: 12px;
         padding: 12px;
         font-weight: 600;
+        color: white;
         transition: all 0.3s;
+    }
+
+    .btn-update:hover {
+        background-color: #ff1493;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(255, 20, 147, 0.3);
+        color: white;
+    }
+
+    .btn-back {
+        color: #ff69b4;
+        border-color: #ff69b4;
+    }
+
+    .btn-back:hover {
+        background-color: #ff69b4;
+        color: white;
     }
     </style>
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-primary navbar-dark sticky-top shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
             <div class="container">
-                <a class="navbar-brand fw-bold" href="#"><i class="bi bi-shop me-2"></i>Kedai Kito</a>
+                <a class="navbar-brand fw-bold" href="#"><i class="bi bi-heart-fill me-2"></i>Oktifia Doll</a>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="dashboard.php">Dashboard</a></li>
                         <li class="nav-item"><a class="nav-link" href="kategori.php">Kategori</a></li>
                         <li class="nav-item"><a class="nav-link active" href="produk.php">Produk</a></li>
-                        <li class="nav-item"><a class="nav-link text-warning" href="keluar.php">Logout</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-light btn-sm text-danger fw-bold ms-lg-2 px-3"
+                                href="keluar.php">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -88,17 +128,18 @@
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="d-flex align-items-center mb-4">
-                    <a href="produk.php" class="btn btn-outline-primary rounded-circle me-3"><i
-                            class="bi bi-arrow-left"></i></a>
-                    <h3 class="fw-bold mb-0">Edit Data Produk</h3>
+                    <a href="produk.php" class="btn btn-outline-pink btn-back rounded-circle me-3">
+                        <i class="bi bi-arrow-left"></i>
+                    </a>
+                    <h3 class="fw-bold mb-0" style="color: #ff1493;">Edit Data Boneka</h3>
                 </div>
 
                 <div class="card">
                     <div class="card-body p-4">
                         <form action="" method="POST" enctype="multipart/form-data">
                             <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label class="form-label">Kategori Produk</label>
+                                <div class="col-md-6 mb-3 mb-md-0">
+                                    <label class="form-label">Kategori Koleksi</label>
                                     <select class="form-select" name="kategori" required>
                                         <option value="">-- Pilih Kategori --</option>
                                         <?php
@@ -111,7 +152,7 @@
                                     </select>
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="form-label">Nama Produk</label>
+                                    <label class="form-label">Nama Boneka</label>
                                     <input type="text" name="nama" class="form-control"
                                         value="<?php echo $p->namaproduk ?>" required>
                                 </div>
@@ -123,34 +164,37 @@
                                     required>
                             </div>
 
-                            <div class="mb-4 text-center p-3 bg-light rounded-4">
-                                <label class="form-label d-block mb-3">Foto Produk Saat Ini</label>
-                                <img src="image/<?php echo $p->gambar ?>" width="150px" class="current-img mb-3"
+                            <div class="mb-4 text-center p-4 bg-light rounded-4 border border-white">
+                                <label class="form-label d-block mb-3">Foto Boneka Saat Ini</label>
+                                <img src="produk/<?php echo $p->gambar ?>" width="180px" class="current-img mb-3"
                                     id="preview">
                                 <input type="hidden" name="foto_lama" value="<?php echo $p->gambar ?>">
-                                <input type="file" name="gambar_baru" class="form-control"
-                                    onchange="previewImage(event)">
-                                <small class="text-muted mt-2 d-block small italic">*Biarkan kosong jika tidak ingin
-                                    mengubah foto</small>
+                                <div class="px-md-5">
+                                    <input type="file" name="gambar_baru" class="form-control"
+                                        onchange="previewImage(event)">
+                                    <small class="text-muted mt-2 d-block"><i>*Kosongkan jika tidak ingin ganti
+                                            foto</i></small>
+                                </div>
                             </div>
 
                             <div class="mb-3">
-                                <label class="form-label">Deskripsi Produk</label>
+                                <label class="form-label">Cerita/Deskripsi Boneka</label>
                                 <textarea name="deskripsi" id="deskripsi"
                                     class="form-control"><?php echo $p->deskripsi ?></textarea>
                             </div>
 
                             <div class="mb-4">
-                                <label class="form-label">Status Produk</label>
+                                <label class="form-label">Status Ketersediaan</label>
                                 <select class="form-select" name="status">
-                                    <option value="1" <?php echo ($p->status == 1) ? 'selected' : ''; ?>>Aktif</option>
-                                    <option value="0" <?php echo ($p->status == 0) ? 'selected' : ''; ?>>Tidak Aktif
-                                    </option>
+                                    <option value="1" <?php echo ($p->status == 1) ? 'selected' : ''; ?>>Tersedia
+                                        (Aktif)</option>
+                                    <option value="0" <?php echo ($p->status == 0) ? 'selected' : ''; ?>>Habis (Tidak
+                                        Aktif)</option>
                                 </select>
                             </div>
 
-                            <button type="submit" name="submit" class="btn btn-primary btn-update w-100 shadow-sm">
-                                <i class="bi bi-save me-2"></i>Simpan Perubahan
+                            <button type="submit" name="submit" class="btn btn-update w-100 shadow-sm">
+                                <i class="bi bi-heart-arrow me-2"></i>Simpan Perubahan Koleksi
                             </button>
                         </form>
 
@@ -173,13 +217,12 @@
                                 $tipe_diizinkan = array('jpg', 'jpeg', 'png', 'gif');
 
                                 if (!in_array($type2, $tipe_diizinkan)) {
-                                    echo '<div class="alert alert-danger mt-3">Format file tidak diizinkan!</div>';
+                                    echo '<div class="alert alert-danger mt-3 text-center">Format file tidak diizinkan!</div>';
                                 } else {
-                                    // Hapus foto lama jika ada
-                                    if(file_exists('./image/' . $foto_lama)) {
-                                        unlink('./image/' . $foto_lama);
+                                    if(file_exists('./produk/' . $foto_lama)) {
+                                        unlink('./produk/' . $foto_lama);
                                     }
-                                    move_uploaded_file($tmp_name, './image/' . $newname);
+                                    move_uploaded_file($tmp_name, './produk/' . $newname);
                                     $namagambar = $newname;
                                 }
                             } else {
@@ -196,7 +239,7 @@
                                 WHERE idproduk = '".$p->idproduk."'");
 
                             if ($update) {
-                                echo '<script>alert("Data berhasil diperbarui!"); window.location="produk.php";</script>';
+                                echo '<script>alert("Koleksi boneka berhasil diperbarui, Oktifia!"); window.location="produk.php";</script>';
                             } else {
                                 echo 'Gagal ' . mysqli_error($conn);
                             }
@@ -209,7 +252,10 @@
     </main>
 
     <footer class="bg-white border-top py-4 text-center text-muted mt-auto">
-        <small>&copy; 2025 - <strong>Kedai Kito Online</strong></small>
+        <div class="container">
+            <small>&copy; 2025 - <strong>Toko Boneka Oktifia</strong>. Dibuat dengan <i
+                    class="bi bi-heart-fill text-danger"></i></small>
+        </div>
     </footer>
 
     <script>
